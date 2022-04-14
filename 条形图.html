@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echarts</title>
+    <script type="text/javascript" src="./echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px;height: 400px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+        var option = {
+            title: {
+                text: '销售情况条形图',
+                subtext: '张三'
+            },
+            tooltip: {},
+            legend: {},
+            dataset: {
+                dimensions: ['产品', '一月', '二月', '三月', '四月'],
+                source: [{
+                    产品: '笔记本',
+                    一月: 43,
+                    二月: 85,
+                    三月: 91,
+                    四月: 85
+                }, {
+                    产品: '台式机',
+                    一月: 83,
+                    二月: 75,
+                    三月: 93,
+                    四月: 45
+                }, {
+                    产品: '路由器',
+                    一月: 86,
+                    二月: 84,
+                    三月: 78,
+                    四月: 45
+                }, {
+                    产品: '交换机',
+                    一月: 72,
+                    二月: 38,
+                    三月: 89,
+                    四月: 69
+                }]
+            },
+            yAxis: {
+                type: 'category'
+            },
+            xAxis: {},
+            series: [{
+                type: 'bar'
+            }, {
+                type: 'bar'
+            }, {
+                type: 'bar'
+            }, {
+                type: 'bar'
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

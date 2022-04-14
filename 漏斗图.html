@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Echarts</title>
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            title: {
+                text: '漏斗图',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            toolbox: {
+                feature: {
+                    dataView: {
+                        readOnly: false
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['购买成功', '下单', '加购物车', '注册', '访问']
+            },
+            series: [{
+                name: '效果图',
+                type: 'funnel',
+                left: '10%',
+                width: '70%',
+                sort: 'ascending',
+                gap: 2,
+                data: [{
+                    value: 8,
+                    name: '购买成功'
+                }, {
+                    value: 15,
+                    name: '下单'
+                }, {
+                    value: 20,
+                    name: '加购物车'
+                }, {
+                    value: 35,
+                    name: '注册'
+                }, {
+                    value: 50,
+                    name: '访问'
+                }]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

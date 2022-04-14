@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width:1000px;height:600px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'), 'chalk');
+        var option = {
+            title: [{
+                text: '销售占比情况',
+                left: 'center',
+                textStyle: {
+                    fontSize: 40,
+                    color: "rgba(23, 205, 75, 1)",
+                    fontStyle: "oblique"
+                },
+            }, {
+                subtext: '一月',
+                left: '17%',
+                top: '45%',
+                textAlign: 'center'
+            }, {
+                subtext: '二月',
+                left: '50%',
+                top: '45%',
+                textAlign: 'center'
+            }, {
+                subtext: '三月',
+                left: '83%',
+                top: '45%',
+                textAlign: 'center'
+            }, {
+                subtext: '四月',
+                left: '17%',
+                top: '90%',
+                textAlign: 'center'
+            }, {
+                subtext: '五月',
+                left: '50%',
+                top: '90%',
+                textAlign: 'center'
+            }, {
+                subtext: '六月',
+                left: '83%',
+                top: '90%',
+                textAlign: 'center'
+            }, ],
+            tooltip: {
+                trigger: 'item',
+                // formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            dataset: {
+                source: [
+                    ['product', '一月', '二月', '三月', '四月', '五月', '六月'],
+                    ['台式机', 86, 92, 85, 83, 73, 55],
+                    ['笔记本', 41, 30, 65, 53, 83, 98],
+                    ['交换机', 24, 67, 79, 86, 65, 82],
+                    ['路由器', 55, 67, 69, 72, 53, 39]
+                ]
+            },
+            series: [{
+                name: '一月',
+                type: 'pie',
+                radius: '25%',
+                center: ['20%', '30%'],
+                encode: {
+                    itemName: 'product',
+                    value: '一月'
+                }
+            }, {
+                name: '二月',
+                type: 'pie',
+                radius: '25%',
+                center: ['50%', '30%'],
+                encode: {
+                    itemName: 'product',
+                    value: '二月'
+                }
+            }, {
+                name: '三月',
+                type: 'pie',
+                radius: '25%',
+                center: ['80%', '30%'],
+                encode: {
+                    itemName: 'product',
+                    value: '三月'
+                }
+            }, {
+                name: '四月',
+                type: 'pie',
+                radius: '25%',
+                center: ['20%', '75%'],
+                encode: {
+                    itemName: 'product',
+                    value: '四月'
+                }
+            }, {
+                name: '五月',
+                type: 'pie',
+                radius: '25%',
+                center: ['50%', '75%'],
+                encode: {
+                    itemName: 'product',
+                    value: '五月'
+                }
+            }, {
+                name: '六月',
+                type: 'pie',
+                radius: '25%',
+                center: ['80%', '75%'],
+                encode: {
+                    itemName: 'product',
+                    value: '六月'
+                }
+            }, ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
